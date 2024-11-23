@@ -1,20 +1,86 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Spendy
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Spendy is a financial ledger application that helps users manage their expenses by uploading bank statements, categorizing transactions using AI, and visualizing spending habits.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- User Authentication
+- Transaction Upload (CSV, Excel, PDF)
+- AI-driven Categorization
+- Expense Summary Visualization
+- Feedback and Learning System
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```sh
+   cd Spendy.Web
+   ```
+
+3. Install spendy-web dependencies:
+   ```sh
+   cd spendy-web
+   npm install
+   # or
+   yarn install
+   ```
+4. Install spendy-api dependencies:
+   ```sh
+   cd ../spendy-api
+   dotnet restore
+   ```
+
+### Running the Application
+
+1. Start the spendy-api server:
+
+   ```sh
+   cd spendy-api
+   dotnet run
+   ```
+
+2. Start the spendy-web development server:
+
+   ```sh
+   cd ../spendy-web
+   npm start
+   # or
+   yarn start
+   ```
+
+3. Open your browser and navigate to `http://localhost:3000`.
+
+### Project Structure
+
+- `spendy-web/`: React frontend application
+- `spendy-api/`: .NET backend API
+
+### API Endpoints
+
+- `POST /api/auth/login`: User login
+- `POST /api/auth/register`: User registration
+- `POST /api/transactions/upload`: Upload transactions
+- `GET /api/transactions`: Fetch transactions
+- `POST /api/transactions/categorize`: Categorize transactions
+
+### Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+### License
+
+This project is licensed under the MIT License.
