@@ -3,11 +3,13 @@ import { TextField, Button, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import config from "../config";
+import { useAuth } from "../context/AuthContext";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -18,10 +20,11 @@ function Login() {
       });
       // Handle successful login
       console.log("🚀 ~ handleLogin ~ Login Successful");
+      login(); // Set the user as authenticated
       navigate("/dashboard"); // Navigate to dashboard on success
     } catch (error: any) {
       const errorMessage = error.response?.data || "Something went wrong!";
-      console.error("🚀 ~ Register Failed:", errorMessage);
+      console.error("🚀 ~ Login Failed:", errorMessage);
     } finally {
       setLoading(false);
     }

@@ -13,11 +13,7 @@ interface ToastMessageProps {
   onClose: () => void;
 }
 
-const ToastMessage: React.FC<ToastMessageProps> = ({
-  message,
-  severity,
-  onClose,
-}) => {
+function ToastMessage({ message, severity, onClose }: ToastMessageProps) {
   return (
     <Dialog
       open={!!message}
@@ -37,6 +33,6 @@ const ToastMessage: React.FC<ToastMessageProps> = ({
       </DialogActions>
     </Dialog>
   );
-};
+}
 
 export default ToastMessage;

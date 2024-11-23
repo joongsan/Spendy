@@ -62,7 +62,7 @@ Spendy is a financial ledger application that helps users manage their expenses 
    yarn start
    ```
 
-3. Open your browser and navigate to `http://localhost:3000`.
+3. Open your browser and navigate to `http://localhost:{your localhsot port number}`.
 
 ### Project Structure
 
