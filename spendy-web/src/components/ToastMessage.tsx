@@ -6,7 +6,7 @@ import {
   DialogContent,
   Typography,
 } from "@mui/material";
-import { ToastMessageProps } from "../interfaces/ToastMessageProps";
+import { IToastMessage } from "../interfaces/IToastMessage";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
 
@@ -15,7 +15,7 @@ import ErrorIcon from "@mui/icons-material/Error";
  * @param param0  message, severity, onClose
  * @returns  Dialog with message, severity, onClose
  */
-function ToastMessage({ message, severity, onClose }: ToastMessageProps) {
+function ToastMessage({ message, severity, onClose }: IToastMessage) {
   const icon =
     severity === "success" ? (
       <CheckCircleIcon sx={{ color: "success.main", fontSize: 48 }} />

@@ -8,7 +8,7 @@
  * @property {Function} login - A function to log in the user
  * @property {Function} logout - A function to log out the user
  */
-export interface AuthContextProps {
+export interface IAuthContext {
   isAuthenticated: boolean;
   user: { username: string; email: string } | null;
   login: (user: { username: string; email: string }) => void;

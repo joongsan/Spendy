@@ -1,7 +1,7 @@
-import { AuthContextProps } from "../interfaces/AuthContextProps";
+import { IAuthContext } from "../interfaces/IAuthContext";
 import { createContext, ReactNode, useContext, useState } from "react";
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+const AuthContext = createContext<IAuthContext | undefined>(undefined);
 
 /**
  * AuthProvider component to provide authentication context to the application

@@ -5,7 +5,7 @@
  * @param onClose - Function to close the message
  * @returns The ToastMessage component
  */
-export interface ToastMessageProps {
+export interface IToastMessage {
   message: string;
   severity: "success" | "error";
   onClose: () => void;
