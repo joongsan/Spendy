@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
  * Hook to access the authentication context
  * @returns The authentication context
  */
-export const useAuth = (): AuthContextProps => {
+export const useAuth = (): IAuthContext => {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error("useAuth must be used within an AuthProvider");
