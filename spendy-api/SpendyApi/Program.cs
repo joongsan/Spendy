@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using SpendyApi.Persistence;
 
@@ -29,6 +30,15 @@ builder.Services.AddCors(options =>
                 .AllowAnyHeader();
         });
 });
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/auth/login";
+        options.LogoutPath = "/auth/logout";
+    });
+
+builder.Services.AddAuthorization();
 
 // Configure the database context to use the connection string based on the environment
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

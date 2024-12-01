@@ -1,0 +1,91 @@
+/* Drawer styles */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  height: 100%;
+  width: 300px;
+  background-color: #1a1a1a;
+  color: #eaeaea;
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: none;
+}
+
+.drawerOpen {
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Menu icon styles */
+.menuIcon {
+  font-size: 24px; /* Larger icon size */
+  color: #1a1a1a; /* Icon color */
+  background-color: transparent; /* Remove the grey background */
+  width: 40px; /* Adjust width to match Listbox item size */
+  height: 40px; /* Adjust height to make it square */
+  display: flex;
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  border: none; /* Remove any border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for clickability */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.menuIcon:hover {
+  background-color: #1a1a1a; /* Darker background on hover */
+  color: white; /* Change icon color to white on hover */
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 900;
+}
+
+/* Listbox item styles */
+.listbox-item {
+  font-size: 18px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #eaeaea;
+}
+
+/* Log Out button styles */
+.logoutButton {
+  width: 100%; /* Full width of the parent container */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 6px; /* Slightly reduced space between icon and text */
+  padding: 8px 12px; /* Reduced padding for smaller button */
+  border: none; /* Remove border */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #ff4d4f; /* Red background for danger */
+  color: white; /* White text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #d42f2f; /* Darker red for hover effect */
+}
+
+.logoutText {
+  font-size: 16px; /* Reduced font size for smaller text */
+  font-weight: bold;
+}
+
+.logoutButton svg {
+  width: 20px; /* Smaller icon size */
+  height: 20px;
+}

@@ -1,0 +1,12 @@
+.listboxWrapper {
+  width: 100%;
+  max-width: 260px;
+  border: 1px solid var(--default-200);
+  padding: 0.5rem 0.25rem;
+  border-radius: var(--small-radius);
+  border-color: var(--default-200);
+}
+
+.dark .listboxWrapper {
+  border-color: var(--default-100);
+}

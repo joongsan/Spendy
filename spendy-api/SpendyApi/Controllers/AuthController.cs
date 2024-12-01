@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SpendyApi.DTOs;
 using SpendyApi.Models;
@@ -49,6 +50,19 @@ namespace SpendyApi.Controllers
                 return Unauthorized();
             }
             return Ok(userInDb);
+        }
+
+        [HttpGet("me")]
+        [Authorize]
+        public IActionResult GetCurrentUser()
+        {
+            var username = User.Identity.Name;
+            var user = _context.Users.SingleOrDefault(u => u.Username == username);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+            return Ok(user);
         }
 
         private static string GenerateSalt()
